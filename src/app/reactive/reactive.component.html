@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>User Data</h2>
+  <form [formGroup]="empForm" (ngSubmit)="onSubmitEmp()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" fromControlName="empname">
+    </div>
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="text" class="form-control" fromControlName="empemail">
+    </div>
+    <div formGroupName="empaddress">
+      <div class="form-group">
+        <label for="Street">Street</label>
+        <input type="text" class="form-control"  fromControlName="empstreet">
+      </div>
+      <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" class="form-control"  fromControlName="empcity">
+      </div>
+      <div class="form-group">
+        <label for="PostalCode">PostalCode</label>
+        <input type="text" class="form-control"  fromControlName="emppostalcode">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

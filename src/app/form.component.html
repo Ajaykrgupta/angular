@@ -1,44 +1,57 @@
 <div class="container">
-    <h2>User Data</h2>
-    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" novalidate>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="name" #nameRef="ngModel" maxlength="10" minlength="4" required class="form-control" name="name" ngModel placeholder="Enter name">
-          <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
-              <div [hidden]="!nameRef.errors.required">
-                  Please enter a name
-              </div>
-              <div [hidden]="!nameRef.errors.minlength">
-                  Please enter atleast 4 character
-              </div>
-              <div [hidden]="!nameRef.errors.maxlength">
-                Please enter not more than 10 character
-            </div>
-          </div>
-          </div>
-        <div class="form-group">
-          <label for="Email">Password</label>
-          <input type="text" class="form-control" name="email" ngModel id="email" placeholder="Enter email">
-        </div>
-        <div ngModelGroup="address">
-            <div class="form-group">
-                <label for="Street">Street</label>
-                <input type="text" class="form-control" name="street" ngModel id="street" placeholder="Enter street">
-            </div>
-            <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" class="form-control" name="city" ngModel id="city" placeholder="Enter city">
-            </div>
-            <div class="form-group">
-                <label for="postalCode">Postal Code</label>
-                <input type="text" #refPincode="ngModel" pattern="^[1-9][0-9]{5}" class="form-control" name="postalCode" ngModel id="postalcode" placeholder="Enter postal code">
-                <div *ngIf="refPincode.errors && (refPincode.dirty || refPincode.touched)" class="alert alert-danger">
-                    <div [hidden]="!refPincode.errors.pattern">
-                        please enter 6 digit number
+    <h2>Form Module</h2>
+    <div class="card">
+        <div class="card-header bg-primary">Forms Module Validation</div>
+        <div class="card-body">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" novalidate>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="name" #nameRef="ngModel" maxlength="10" minlength="4" required class="form-control" name="name" ngModel placeholder="Enter name">
+                  <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)" class="alert alert-danger">
+                      <div [hidden]="!nameRef.errors.required">
+                          Please enter a name
+                      </div>
+                      <div [hidden]="!nameRef.errors.minlength">
+                          Please enter atleast 4 character
+                      </div>
+                      <div [hidden]="!nameRef.errors.maxlength">
+                        Please enter not more than 10 character
+                    </div>
+                  </div>
+                  </div>
+                <div class="form-group">
+                  <label for="Email">Password</label>
+                  <input type="text" class="form-control" name="email" ngModel id="email" placeholder="Enter email">
+                </div>
+                <div ngModelGroup="address">
+                    <div class="form-group">
+                        <label for="Street">Street</label>
+                        <input type="text" class="form-control" name="street" ngModel id="street" placeholder="Enter street">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" name="city" ngModel id="city" placeholder="Enter city">
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" #refPincode="ngModel" pattern="^[1-9][0-9]{5}" class="form-control" name="postalCode" ngModel id="postalcode" placeholder="Enter postal code">
+                        <div *ngIf="refPincode.errors && (refPincode.dirty || refPincode.touched)" class="alert alert-danger">
+                            <div [hidden]="!refPincode.errors.pattern">
+                                please enter 6 digit number
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+              </form>
         </div>
-        <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
-      </form>
-</div> 
+      </div>
+ </div>
+ <div class="container">
+     <h2>Reactive Form Module</h2>
+     <div class="card">
+        <div class="card-header bg-primary">Reactive Form Module</div>
+        <div class="card-body"><app-reactive></app-reactive></div>
+       </div>
+     
+ </div>

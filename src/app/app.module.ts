@@ -4,18 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TutorialsComponent } from './tutorials.component';
 import { SubComponent } from './sub.component'; 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TutorialsComponent,
-    SubComponent
+    SubComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
