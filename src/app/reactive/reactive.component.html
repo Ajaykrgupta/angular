@@ -1,26 +1,29 @@
 <div class="container">
   <h2>User Data</h2>
-  <form [formGroup]="empForm" (ngSubmit)="onSubmitEmp()">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" class="form-control" fromControlName="empname">
+      <input type="text" #refname class="form-control" fromControlName="name">
+      <b>
+        {{ refname.className}}
+      </b>
     </div>
     <div class="form-group">
       <label for="Email">Email</label>
-      <input type="text" class="form-control" fromControlName="empemail">
+      <input type="text" class="form-control" fromControlName="email">
     </div>
-    <div formGroupName="empaddress">
+    <div formGroupName="address">
       <div class="form-group">
         <label for="Street">Street</label>
-        <input type="text" class="form-control"  fromControlName="empstreet">
+        <input type="text" class="form-control"  fromControlName="street">
       </div>
       <div class="form-group">
         <label for="City">City</label>
-        <input type="text" class="form-control"  fromControlName="empcity">
+        <input type="text" class="form-control"  fromControlName="city">
       </div>
       <div class="form-group">
         <label for="PostalCode">PostalCode</label>
-        <input type="text" class="form-control"  fromControlName="emppostalcode">
+        <input type="text" class="form-control"  fromControlName="postalcode">
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

@@ -6,6 +6,8 @@ import { TutorialsComponent } from './tutorials.component';
 import { SubComponent } from './sub.component'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { ReactiveComponent } from './reactive/reactive.component';
     AppComponent,
     TutorialsComponent,
     SubComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,

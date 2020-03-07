@@ -1,17 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EmployeeService } from './employee.service';
+
 @Component({
   selector: 'app-root',
-  templateUrl: './form.component.html',
+  //templateUrl: './reactive/reactive.component.html',
+  templateUrl: './employee-list/employee-list.component.html',
+  
   //styleUrls: ['./app.component.css']
   styles: [`input.ng-invalid{border-left:5px solid red;}
-          input.ng-valid{border-left:5px solid green;}`]
+          input.ng-valid{border-left:5px solid green;}`],
+  providers:[EmployeeService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app';
   public childData:string;
   name ="Ajay kumar";
   date = new Date;
-  onSubmit(value:any){
-    console.log(value);
+
+  userForm: FormGroup;
+ 
+  constructor( private _formBuilder: FormBuilder, private _employeeServices: EmployeeService){}
+  ngOnInit(){
+    this.userForm = this._formBuilder.group({
+      name:['ajay', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
+      email:[],
+      address:this._formBuilder.group({
+        street:[],
+        city:[],
+        postalcode:[]
+      })
+    });
+
+    this.employees = this._employeeServices.getEmployees();
+
   }
+
+  onSubmit(value:any){
+   console.log(value);
+  }
+
+  /*userForm = new FormGroup({
+    name: new FormControl('Ajay', Validators.required) ,
+    email: new FormControl(),
+    address: new FormGroup({
+     street: new FormControl(),
+     city: new FormControl(),
+     postalcode: new FormControl()
+    })
+ });*/
+
+ employees = [];
+ 
 }
