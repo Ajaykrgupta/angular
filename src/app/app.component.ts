@@ -9,7 +9,8 @@ import { EmployeeService } from './employee.service';
   
   //styleUrls: ['./app.component.css']
   styles: [`input.ng-invalid{border-left:5px solid red;}
-          input.ng-valid{border-left:5px solid green;}`],
+          input.ng-valid{border-left:5px solid green;}
+          h1{color:blue;}`],
   providers:[EmployeeService]
 })
 export class AppComponent implements OnInit{
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit{
   date = new Date;
 
   userForm: FormGroup;
+  errorMsg:string;
  
   constructor( private _formBuilder: FormBuilder, private _employeeServices: EmployeeService){}
   ngOnInit(){
@@ -34,7 +36,7 @@ export class AppComponent implements OnInit{
 
     //this.employees = this._employeeServices.getEmployees();
     this._employeeServices.getEmployees()
-      .subscribe(resEmployeeData => this.employees = resEmployeeData);
+      .subscribe(resEmployeeData => this.employees = resEmployeeData, resEmployeeError => this.errorMsg = resEmployeeError);
 
 
   }
