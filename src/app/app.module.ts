@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

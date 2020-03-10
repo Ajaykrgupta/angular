@@ -32,7 +32,10 @@ export class AppComponent implements OnInit{
       })
     });
 
-    this.employees = this._employeeServices.getEmployees();
+    //this.employees = this._employeeServices.getEmployees();
+    this._employeeServices.getEmployees()
+      .subscribe(resEmployeeData => this.employees = resEmployeeData);
+
 
   }
 
