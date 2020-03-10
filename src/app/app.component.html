@@ -1,32 +1,21 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:left">
-  <h1>
-    Hello World
-  </h1>
-  <h2>Parrent Component</h2>
-  <label>Enter Parent AppComponet Value</label>
-  <input type="text" #ptext (keyup)="0" />
-  <p>Value of child Component: {{childData}}</p>
-  <h2>Pipes</h2>
-  <p>{{ date }}</p>
-  <p>{{ date | date:'fullDate' }}</p>
-  <p>{{ date | date:'shortDate' }}</p>
-  <p>{{ date | date:'mediumTime' }}</p>
-  <p>{{ date | date:'shortTime' }}</p>
-  <p>{{ name | uppercase }}</p>
-  <p>{{ name | lowercase }}</p>
-  <p>{{ name | slice:'2':'4' }}</p>
-  <p>{{ 8.567 }}</p>
-  <p>{{ 8.567 | number:'1.2-3' }}</p>
-  <p>{{ 8.567 | number:'2.2-3' }}</p>
-  <p>{{ 8.567 | number:'2.4-4' }}</p>
-  <p>{{ 8.567 | number:'4.5-6' }}</p>
-  <p>{{ 8.567 | number:'2.2-2' }}</p>
-  <p>{{ 8.99 | currency:'INR':true }}</p>
-  <p>{{ 8.99 | currency:'USD':true }}</p>
-  <p>{{ 8.99 | currency:'GBP':true }}</p>
-  <my-tutorials (childEvent)="childData=$event"  [parentData]="ptext.value"></my-tutorials>
-  <sub-app></sub-app>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active">Home</a>
+      <a class="nav-item nav-link" routerLink="/departments" routerLinkActive="active">Departments</a>
+      <a class="nav-item nav-link" routerLink="/employee"  routerLinkActive="active">Employees</a>
+      <a class="nav-item nav-link" routerLink="/reactiveform"  routerLinkActive="active">Reactive Form</a>
+      <a class="nav-item nav-link" routerLink="/templatedrivenform"  routerLinkActive="active">Template Driven Form</a>
+      <a class="nav-item nav-link" routerLink="/miscellaneous" routerLinkActive="active">Miscellaneous Practice</a>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+ 
 
 

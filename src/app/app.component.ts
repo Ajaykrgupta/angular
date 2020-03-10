@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { EmployeeService } from './employee.service';
+//import { EmployeeService } from './employee.service';
 
 @Component({
   selector: 'app-root',
-  //templateUrl: './reactive/reactive.component.html',
-  templateUrl: './employee-list/employee-list.component.html',
-  
+  templateUrl: 'app.component.html',
   //styleUrls: ['./app.component.css']
   styles: [`input.ng-invalid{border-left:5px solid red;}
           input.ng-valid{border-left:5px solid green;}
           h1{color:blue;}`],
-  providers:[EmployeeService]
+  providers:[]
 })
 export class AppComponent implements OnInit{
   title = 'app';
@@ -22,7 +20,7 @@ export class AppComponent implements OnInit{
   userForm: FormGroup;
   errorMsg:string;
  
-  constructor( private _formBuilder: FormBuilder, private _employeeServices: EmployeeService){}
+  constructor( private _formBuilder: FormBuilder){}
   ngOnInit(){
     this.userForm = this._formBuilder.group({
       name:['ajay', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
@@ -35,14 +33,10 @@ export class AppComponent implements OnInit{
     });
 
     //this.employees = this._employeeServices.getEmployees();
-    this._employeeServices.getEmployees()
-      .subscribe(resEmployeeData => this.employees = resEmployeeData, resEmployeeError => this.errorMsg = resEmployeeError);
+    // this._employeeServices.getEmployees()
+    //   .subscribe(resEmployeeData => this.employees = resEmployeeData, resEmployeeError => this.errorMsg = resEmployeeError);
 
 
-  }
-
-  onSubmit(value:any){
-   console.log(value);
   }
 
   /*userForm = new FormGroup({
@@ -55,6 +49,6 @@ export class AppComponent implements OnInit{
     })
  });*/
 
- employees = [];
+ //employees = [];
  
 }

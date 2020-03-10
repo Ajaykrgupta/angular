@@ -1,8 +1,8 @@
-<h1>Random Company</h1>
-<h4>Emplyee List</h4>
-<p>{{ errorMsg }}</p>
-<ul *ngFor="let employee of employees">
-  <li>{{employee.name}}</li>
-</ul>
-
-<app-employee-detail></app-employee-detail>
+<div class="container">
+  <h4>Emplyee List</h4>
+  <p>{{ errorMsg }}</p>
+  <ul *ngFor="let employee of employees">
+    <li>{{employee.name}}</li>
+  </ul>
+  <app-employee-detail></app-employee-detail>
+</div>

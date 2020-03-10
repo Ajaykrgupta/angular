@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-reactive',
   templateUrl: './reactive.component.html',
@@ -20,6 +21,10 @@ export class ReactiveComponent implements OnInit {
     onSubmitEmp(){
       console.log(this.empForm.value);
     } 
+
+    onSubmit(value:any){
+      console.log(value);
+     } 
   // constructor() { }
 
   ngOnInit() {

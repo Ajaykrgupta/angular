@@ -1,0 +1,9 @@
+<div class="container">
+  <div>
+    <h2>Parrent Component</h2>
+    <label>Enter Parent AppComponet Value</label>
+    <input type="text" #ptext (keyup)="0" />
+    <p>Value of child Component: {{childData}}</p>
+    <my-tutorials (childEvent)="childData=$event"  [parentData]="ptext.value"></my-tutorials>
+  </div>
+</div>
