@@ -10,7 +10,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { TutorialsComponent } from './tutorials.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AnimationComponent } from './animation/animation.component';
 
+ 
 
 const routes: Routes = [
     { path:'', component: HomeComponent },
@@ -22,6 +24,7 @@ const routes: Routes = [
     { path: 'templatedrivenform', component: TemplateDrivenComponent },
     { path: 'miscellaneous', component: MiscellaneousComponent },
     { path: 'departments/:id', component: DepartmentDetailComponent },
+    { path: 'animation', component: AnimationComponent },
     { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -35,4 +38,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule{}
-export const routingComponents = [TutorialsComponent,ReactiveComponent,EmployeeListComponent,EmployeeDetailComponent, DepartmentListComponent,HomeComponent,TemplateDrivenComponent,MiscellaneousComponent, DepartmentDetailComponent, PageNotFoundComponent ]
+export const routingComponents = [TutorialsComponent,ReactiveComponent,EmployeeListComponent,EmployeeDetailComponent, DepartmentListComponent,HomeComponent,TemplateDrivenComponent,MiscellaneousComponent, DepartmentDetailComponent, PageNotFoundComponent, AnimationComponent ]

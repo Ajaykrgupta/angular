@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 // import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 // import { TutorialsComponent } from './tutorials.component';
 import { routingComponents } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,15 +29,14 @@ import { routingComponents } from './app-routing.module';
     // TemplateDrivenComponent,
     // MiscellaneousComponent,
     routingComponents,
-    
-    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
     // RouterModule.forRoot([
     //   { path:'home', component: HomeComponent },
     //   { path:'departments', component: DepartmentListComponent },
