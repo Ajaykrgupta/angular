@@ -8,15 +8,21 @@ import { ReactiveComponent } from './reactive/reactive.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { TutorialsComponent } from './tutorials.component';
+import { DepartmentDetailComponent } from './department-detail/department-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
-    { path:'home', component: HomeComponent },
+    { path:'', component: HomeComponent },
+    //{ path:'', redirectTo: '/departments', pathMatch: 'full' },
+    //{ path:'', redirectTo: '/departments', pathMatch: 'prefix' },
     { path:'departments', component: DepartmentListComponent },
     { path: 'employee', component: EmployeeListComponent },
     { path: 'reactiveform', component: ReactiveComponent },
     { path: 'templatedrivenform', component: TemplateDrivenComponent },
-    { path: 'miscellaneous', component: MiscellaneousComponent }
+    { path: 'miscellaneous', component: MiscellaneousComponent },
+    { path: 'departments/:id', component: DepartmentDetailComponent },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -29,4 +35,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule{}
-export const routingComponents = [TutorialsComponent,ReactiveComponent,EmployeeListComponent,EmployeeDetailComponent, DepartmentListComponent,HomeComponent,TemplateDrivenComponent,MiscellaneousComponent ]
+export const routingComponents = [TutorialsComponent,ReactiveComponent,EmployeeListComponent,EmployeeDetailComponent, DepartmentListComponent,HomeComponent,TemplateDrivenComponent,MiscellaneousComponent, DepartmentDetailComponent, PageNotFoundComponent ]

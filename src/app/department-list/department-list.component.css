@@ -1,0 +1,4 @@
+.list-group li.selected{
+    background-color: #CFD8DC;
+    color: red;
+}

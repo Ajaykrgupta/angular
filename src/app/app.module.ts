@@ -27,7 +27,9 @@ import { routingComponents } from './app-routing.module';
     // HomeComponent,
     // TemplateDrivenComponent,
     // MiscellaneousComponent,
-    routingComponents
+    routingComponents,
+    
+    
   ],
   imports: [
     BrowserModule,
