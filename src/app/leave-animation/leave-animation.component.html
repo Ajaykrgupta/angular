@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Leave Animation </h3>
+  <button (click)="toggleDiv()">Toggle Div</button>
+  <button (click)="toggleMulDiv()">Toggle Multiple KeyFrame</button>
+  <div *ngIf="showDiv" [@flyInOut]>
+    FLYOUT
+</div>
+
+<div *ngIf="showMulDiv" [@flyMulInOut]>
+  Miltiple Key Frame Animation
+</div>

@@ -11,6 +11,7 @@ import { TutorialsComponent } from './tutorials.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AnimationComponent } from './animation/animation.component';
+import { LeaveAnimationComponent } from './leave-animation/leave-animation.component';
 
  
 
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'miscellaneous', component: MiscellaneousComponent },
     { path: 'departments/:id', component: DepartmentDetailComponent },
     { path: 'animation', component: AnimationComponent },
+    { path: 'leaveanimation', component:LeaveAnimationComponent },
     { path: '**', component: PageNotFoundComponent }
 ];
 

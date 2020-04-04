@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 // import { TutorialsComponent } from './tutorials.component';
 import { routingComponents } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LeaveAnimationComponent } from './leave-animation/leave-animation.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // TemplateDrivenComponent,
     // MiscellaneousComponent,
     routingComponents,
+    LeaveAnimationComponent,
   ],
   imports: [
     BrowserModule,
