@@ -1,6 +1,16 @@
 <div class="container">
   <h3>Angular Animation </h3>
   <button (click)="ToggleLights()">ToggleLights</button>
-  <div [@lightsOnOff] ="roomState" class="room">Rotate</div>
-
-</div>
+  <button (click)="ToggleHeight()">Toggle Height</button>
+  <div (@lightsOnOff.done)="animationDone($event)" (@lightsOnOff.start)="animationStarted($event)" [@lightsOnOff] ="roomState" class="room">Rotate</div>
+  
+  <div [@lightsOnOff] ="roomState" [@heightTrigger]="heightState" class="heightBox">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+  <div class="room" [@groupTrigger]="roomState"></div>
+</div>    
